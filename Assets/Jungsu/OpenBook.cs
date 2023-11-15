@@ -35,7 +35,7 @@ public class OpenBook : MonoBehaviour
             foreach (string s in folders)
             {
                 currentButton = GameObject.Instantiate(menuButtonPrefab, bookMenu);
-                currentButton.GetComponentInChildren<TextMeshProUGUI>().text = s.Split('/')[^1];
+                currentButton.GetComponentInChildren<TextMeshProUGUI>().text = s.Split('/').Last();
                 currentButton.SetActive(true);
 
             }
