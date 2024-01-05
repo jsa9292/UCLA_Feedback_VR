@@ -26,6 +26,7 @@ public class RoomSetup : MonoBehaviour
         foreach (GameObject room in rooms) {
             room.SetActive(false);
         }
+        if (i < 0) return;
         rooms[i].SetActive(true);
         rooms[i].transform.position = roomPos;
     }

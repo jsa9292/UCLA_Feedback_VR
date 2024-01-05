@@ -15,6 +15,7 @@ public class DataManager : MonoBehaviour
     public TMPro.TextMeshProUGUI savingTo;
     private string savePath;
     public static DataManager instance;
+    public bool dataWrite = false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -25,27 +26,27 @@ public class DataManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int sceneID = SceneManager.GetActiveScene().buildIndex;
-        if (sceneID == 0)
+        try
         {
 
-            savePath = Application.persistentDataPath + "/" + pid.text + ".txt";
-            savingTo.text = savePath;
-        }
-        else if (sceneID == 1) {
             WriteToSave(Camera.main.transform.position.ToString() + ", " + Camera.main.transform.localEulerAngles.ToString());
+        }
+        catch {
+            Debug.Log("no camera");
         }
     }
     private StreamWriter writer;
     public void OnStartPressed() {
-        SceneManager.LoadScene(1);
+        dataWrite = true;
+        savePath = Application.persistentDataPath + "/" + pid.text + ".txt";
         Debug.Log(savePath);
+        savingTo.text = savePath;
         writer = new StreamWriter(savePath, true);
         writer.WriteLine(Time.realtimeSinceStartup.ToString() + " Start");
     }
     public void WriteToSave(string s) {
 
-        if (writer != null) writer.WriteLine(Time.realtimeSinceStartup.ToString() + " " + s);
+        if (writer != null && dataWrite) writer.WriteLine(Time.realtimeSinceStartup.ToString() + " " + s);
         else Debug.Log("no writer");
     }
     private void OnApplicationQuit()
