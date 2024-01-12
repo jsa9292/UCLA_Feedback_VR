@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static HTC.UnityPlugin.ColliderEvent.ColliderAxisEventData;
 
 public class VR_HandTouch : MonoBehaviour
 {
@@ -25,6 +26,11 @@ public class VR_HandTouch : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
+        if (other.tag == "Wall") {
+            MovingWall mw = other.GetComponent<MovingWall>();
+            mw.MoveWall();
+            return;
+        } 
         ob.onTouchMoved(transform.position);
 
     }

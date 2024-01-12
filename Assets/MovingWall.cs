@@ -8,9 +8,10 @@ public class MovingWall : MonoBehaviour
     public float speed;
     public Transform pair;
     // Start is called before the first frame update
-    private void OnCollisionStay(Collision collision)
+    public void MoveWall()
     {
         transform.position += dir * speed * Time.deltaTime;
         pair.position += dir * speed * Time.deltaTime;
+        //Debug.Log("walls moving");
     }
 }
