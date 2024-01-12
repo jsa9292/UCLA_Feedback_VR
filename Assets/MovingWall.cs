@@ -12,6 +12,6 @@ public class MovingWall : MonoBehaviour
     {
         transform.position += dir * speed * Time.deltaTime;
         pair.position += dir * speed * Time.deltaTime;
-        //Debug.Log("walls moving");
+        Debug.Log("walls moving");
     }
 }
