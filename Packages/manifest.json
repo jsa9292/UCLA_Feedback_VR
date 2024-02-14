@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.htc.upm.vive.openxr": "https://github.com/ViveSoftware/VIVE-OpenXR-PC.git?path=com.htc.upm.vive.openxr#versions/1.0.12",
+    "com.htc.upm.vive.openxr": "https://github.com/ViveSoftware/VIVE-OpenXR-PC.git?path=com.htc.upm.vive.openxr",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ai.navigation": "2.0.0",
     "com.unity.feature.development": "1.0.2",
