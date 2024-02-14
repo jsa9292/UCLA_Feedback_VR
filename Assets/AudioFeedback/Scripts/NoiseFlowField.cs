@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
-using UnityEditor.Animations;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor.Animations;
+using UnityEditor;
+#endif
 
 public class NoiseFlowField : MonoBehaviour
 {
@@ -46,7 +48,6 @@ public class NoiseFlowField : MonoBehaviour
     public bool baked;
     public bool record;
     public bool endRecording;
-    GameObjectRecorder _recorder;
     string _clipName;
     public AnimationClip _currentClip;
     public string _newClipName;
@@ -65,17 +66,21 @@ public class NoiseFlowField : MonoBehaviour
             }
             this.enabled = false;
         }
+#if UNITY_EDITOR
         else if (record) {
             //Spawn();
-            _recorder = new GameObjectRecorder(gameObject);
-            _recorder.BindComponentsOfType<Transform>(gameObject, true);
-
+            StartRecording();
         }
-
+#endif
         else Spawn();
     }
-    private void StartRecording() { 
-    
+#if UNITY_EDITOR
+    GameObjectRecorder _recorder;
+    private void StartRecording()
+    {
+        _recorder = new GameObjectRecorder(gameObject);
+        _recorder.BindComponentsOfType<Transform>(gameObject, true);
+
     }
     private void StopRecording() {
         if (!record) return;
@@ -84,6 +89,7 @@ public class NoiseFlowField : MonoBehaviour
         //AssetDatabase.CreateAsset(_currentClip, _saveFolderLocation + _newClipName);
         AssetDatabase.SaveAssets();
     }
+#endif
     void Spawn()
     {
         _particles = new List<FlowFieldParticle>();
@@ -127,18 +133,19 @@ public class NoiseFlowField : MonoBehaviour
         ParticleBehavior();
     }
 
+#if UNITY_EDITOR
     private void LateUpdate()
     {
         if (record) {
             _recorder.TakeSnapshot(Time.deltaTime);
         }
-
         if (endRecording)
         {
             StopRecording();
         }
 
     }
+#endif
 
     void CalculateFlowFieldDirections()
     {

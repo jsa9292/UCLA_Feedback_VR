@@ -246,7 +246,7 @@ namespace HTC.UnityPlugin.VRModuleManagement
             var activeSubsys = ListPool<XRInputSubsystem>.Get();
             try
             {
-                SubsystemManager.GetInstances(activeSubsys);
+                SubsystemManager.GetSubsystems(activeSubsys);
                 if (activeSubsys.Count == 0)
                 {
                     Debug.LogWarning("No XRInputSubsystem detected.");

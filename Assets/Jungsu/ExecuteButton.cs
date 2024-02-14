@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,3 +32,4 @@ public class ExecuteButton : Editor
         editorButton.button.onClick.Invoke();
     }
 }
+#endif

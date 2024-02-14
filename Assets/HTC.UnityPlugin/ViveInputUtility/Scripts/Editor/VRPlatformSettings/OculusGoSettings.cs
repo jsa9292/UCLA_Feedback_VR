@@ -393,7 +393,7 @@ namespace HTC.UnityPlugin.Vive
         private const string OCULUS_ANDROID_PACKAGE_NAME = "com.unity.xr.oculus.android";
         public const AndroidSdkVersions MIN_SUPPORTED_ANDROID_SDK_VERSION =
 #if UNITY_2020_1_OR_NEWER
-            AndroidSdkVersions.AndroidApiLevel22;
+            AndroidSdkVersions.AndroidApiLevel23;
 #else
             AndroidSdkVersions.AndroidApiLevel21;
 #endif
