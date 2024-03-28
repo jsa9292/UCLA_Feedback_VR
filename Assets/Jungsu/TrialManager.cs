@@ -1,5 +1,4 @@
-﻿using HTC.UnityPlugin.Vive;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,8 +40,9 @@ public class TrialManager : MonoBehaviour
 
     private void Update()
     {
-        controllerTrigger = (ViveInput.GetAxisEx(HandRole.RightHand, ControllerAxis.Trigger));
-        controllerPad = new Vector2(ViveInput.GetAxisEx(HandRole.RightHand, ControllerAxis.PadX), ViveInput.GetAxisEx(HandRole.RightHand, ControllerAxis.PadY));
+        //FIXME
+        controllerTrigger = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
+        controllerPad = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
         //Debug.Log(controllerTrigger.ToString() + controllerPad.ToString());
     }
     public void ExerciseButtonPressed(GameObject self)

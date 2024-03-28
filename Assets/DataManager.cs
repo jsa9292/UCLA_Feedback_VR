@@ -47,7 +47,11 @@ public class DataManager : MonoBehaviour
     public void WriteToSave(string s) {
 
         if (writer != null && dataWrite) writer.WriteLine(Time.realtimeSinceStartup.ToString() + " " + s);
-        else Debug.Log("no writer");
+        else
+        {
+            Debug.LogError("no writer");
+            this.enabled = false;
+        }
     }
     private void OnApplicationQuit()
     {

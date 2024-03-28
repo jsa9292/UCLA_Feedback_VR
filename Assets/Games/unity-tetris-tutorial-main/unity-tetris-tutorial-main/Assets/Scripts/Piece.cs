@@ -1,5 +1,4 @@
 using UnityEngine;
-using HTC.UnityPlugin.Vive;
 public class Piece : MonoBehaviour
 {
     public Board board { get; private set; }
@@ -45,7 +44,8 @@ public class Piece : MonoBehaviour
         lockTime += Time.deltaTime;
 
         // Handle rotation
-        if (ViveInput.GetPressDownEx(HandRole.RightHand,ControllerButton.Trigger)) {
+        //FIXME
+        if (false) {//ViveInput.GetPressDownEx(HandRole.RightHand,ControllerButton.Trigger)) {
             Rotate(-1);
         } else if (Input.GetKeyDown(KeyCode.E)) {
             Rotate(1);

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static HTC.UnityPlugin.ColliderEvent.ColliderAxisEventData;
 
 public class VR_HandTouch : MonoBehaviour
 {
