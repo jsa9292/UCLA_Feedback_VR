@@ -1,14 +1,5 @@
 {
   "dependencies": {
-    "com.biosmanager.unity-openvr-tracking": {
-      "version": "file:C:/Users/insun/Downloads/unity-openvr-tracking-master/unity-openvr-tracking-master",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {
-        "com.valvesoftware.unity.openvr": "1.1.4",
-        "com.unity.nuget.newtonsoft-json": "3.0.2"
-      }
-    },
     "com.meta.xr.mrutilitykit": {
       "version": "63.0.0",
       "depth": 1,
@@ -261,7 +252,7 @@
     },
     "com.unity.nuget.newtonsoft-json": {
       "version": "3.2.1",
-      "depth": 1,
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -427,16 +418,6 @@
         "com.unity.xr.core-utils": "2.1.1"
       },
       "url": "https://packages.unity.com"
-    },
-    "com.valvesoftware.unity.openvr": {
-      "version": "file:C:/Users/insun/Downloads/unity-xr-plugin-1.1.4/unity-xr-plugin-1.1.4/com.valve.openvr",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {
-        "com.unity.xr.management": "3.2.13",
-        "com.unity.ugui": "1.0.0",
-        "com.unity.xr.legacyinputhelpers": "2.1.4"
-      }
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",

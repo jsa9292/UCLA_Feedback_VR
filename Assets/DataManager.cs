@@ -36,11 +36,10 @@ public class DataManager : MonoBehaviour
         }
     }
     private StreamWriter writer;
-    public void OnStartPressed() {
+    public void OnStartPressed(string id) {
         dataWrite = true;
-        savePath = Application.persistentDataPath + "/" + pid.text + ".txt";
+        savePath = Application.persistentDataPath + "/" + id + ".txt";
         Debug.Log(savePath);
-        savingTo.text = savePath;
         writer = new StreamWriter(savePath, true);
         writer.WriteLine(Time.realtimeSinceStartup.ToString() + " Start");
     }

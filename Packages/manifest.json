@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.biosmanager.unity-openvr-tracking": "file:C:/Users/insun/Downloads/unity-openvr-tracking-master/unity-openvr-tracking-master",
     "com.meta.xr.sdk.all": "63.0.0",
     "com.meta.xr.sdk.interaction.ovr.samples": "63.0.0",
     "com.unity.2d.sprite": "1.0.0",
@@ -15,7 +14,6 @@
     "com.unity.visualscripting": "1.8.0",
     "com.unity.xr.oculus": "4.1.2",
     "com.unity.xr.openxr": "1.9.1",
-    "com.valvesoftware.unity.openvr": "file:C:/Users/insun/Downloads/unity-xr-plugin-1.1.4/unity-xr-plugin-1.1.4/com.valve.openvr",
     "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",

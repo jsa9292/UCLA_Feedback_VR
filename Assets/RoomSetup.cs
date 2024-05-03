@@ -30,4 +30,18 @@ public class RoomSetup : MonoBehaviour
         rooms[i].SetActive(true);
         rooms[i].transform.position = roomPos;
     }
+    public DataManager dm;
+    public string ParticipantId;
+    public int RoomToActivate = 0;
+    public bool Activate = false;
+    private void Update()
+    {
+       if(Activate && ParticipantId != null)
+        {
+            Activate = false;
+            gameObject.SetActive(false);
+            ActivateRoom(RoomToActivate);
+            dm.OnStartPressed(ParticipantId);
+        }
+    }
 }
