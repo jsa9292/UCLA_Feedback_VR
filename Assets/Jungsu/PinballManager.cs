@@ -22,7 +22,7 @@ public class PinballManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (reset) Reset();
+        if (TrialManager.instance.controllerTrigger > 0.5f) Reset();
         basket.localPosition = new Vector3(TrialManager.instance.controllerPad.x * basketMax, initialPos.y,initialPos.z);
     }
     public bool reset;

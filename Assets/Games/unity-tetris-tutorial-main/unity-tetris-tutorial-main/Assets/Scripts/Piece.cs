@@ -45,9 +45,9 @@ public class Piece : MonoBehaviour
 
         // Handle rotation
         //FIXME
-        if (false) {//ViveInput.GetPressDownEx(HandRole.RightHand,ControllerButton.Trigger)) {
+        if (TrialManager.instance.controllerTrigger > 0.5f) {//ViveInput.GetPressDownEx(HandRole.RightHand,ControllerButton.Trigger)) {
             Rotate(-1);
-        } else if (Input.GetKeyDown(KeyCode.E)) {
+        } else if (TrialManager.instance.controllerPad.y > 0.5f) {
             Rotate(1);
         }
 
