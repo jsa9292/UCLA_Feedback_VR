@@ -33,8 +33,6 @@ public class TrialManager : MonoBehaviour
             bt.name = clip_i.ToString();
             clip_i++;
             bt.SetActive(true);
-
-
         }
     }
 

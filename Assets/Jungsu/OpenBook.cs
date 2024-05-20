@@ -64,7 +64,7 @@ public class OpenBook : MonoBehaviour
     {
         string folderPath = ebookPath + folderName;
         DirectoryInfo dirInfo = new DirectoryInfo(folderPath);
-        fInfo = dirInfo.GetFiles("*.PNG");
+        fInfo = dirInfo.GetFiles("*.jpg");
         Debug.Log(fInfo[0].FullName);
         if (TrialManager.instance != null)
         {
@@ -76,7 +76,7 @@ public class OpenBook : MonoBehaviour
         foreach (FileInfo file in fInfo)
         {
 
-            StartCoroutine(InitPage("PDF books/" + folderName + "/" + file.Name.TrimEnd(".png")));
+            StartCoroutine(InitPage("PDF books/" + folderName + "/" + file.Name.TrimEnd(".jpg")));
 
         }
 

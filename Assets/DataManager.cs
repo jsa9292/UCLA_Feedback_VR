@@ -28,7 +28,6 @@ public class DataManager : MonoBehaviour
     {
         try
         {
-
             WriteToSave(Camera.main.transform.position.ToString() + ", " + Camera.main.transform.localEulerAngles.ToString());
         }
         catch {
