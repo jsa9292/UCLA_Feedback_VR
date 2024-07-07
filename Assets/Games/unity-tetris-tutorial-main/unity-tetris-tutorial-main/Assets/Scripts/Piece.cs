@@ -35,6 +35,7 @@ public class Piece : MonoBehaviour
         }
     }
 
+    public bool lockRepeat = false;
     private void Update()
     {
         board.Clear(this);
@@ -44,11 +45,14 @@ public class Piece : MonoBehaviour
         lockTime += Time.deltaTime;
 
         // Handle rotation
-        //FIXME
         if (TrialManager.instance.controllerTrigger > 0.5f) {//ViveInput.GetPressDownEx(HandRole.RightHand,ControllerButton.Trigger)) {
-            Rotate(-1);
-        } else if (TrialManager.instance.controllerPad.y > 0.5f) {
-            Rotate(1);
+            if(!lockRepeat) Rotate(-1);
+            lockRepeat = true;
+        }
+        else
+        {
+            lockRepeat = false;
+
         }
 
         // Handle hard drop
@@ -83,10 +87,15 @@ public class Piece : MonoBehaviour
 
         // Left/right movement
         //if (Input.GetKey(KeyCode.A)) {
-        if (TrialManager.instance.controllerPad.x < -.3f) { 
-            Move(Vector2Int.left);
+        if (TrialManager.instance.controllerPad.x < -.3f) {
+            if (Move(Vector2Int.left)) {
+                stepTime = Time.time + stepDelay;
+            }
         } else if (TrialManager.instance.controllerPad.x > .3f) {
-            Move(Vector2Int.right);
+            if (Move(Vector2Int.right))
+            {
+                stepTime = Time.time + stepDelay;
+            }
         }
     }
 

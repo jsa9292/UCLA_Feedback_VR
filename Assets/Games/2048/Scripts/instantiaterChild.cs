@@ -42,8 +42,11 @@ public class instantiaterChild : MonoBehaviour
         //    //}
 
         //}
-
-        transform.position = new Vector3(transform.position.x - TrialManager.instance.controllerPad.x* instantiater.moveSpeed, transform.position.y, transform.position.z);
+        float xMove = 0;
+        xMove += TrialManager.instance.controllerPad.x > 0.3f ? -1 : 0;
+        xMove += TrialManager.instance.controllerPad.x < -0.3f ? 1 : 0;
+        xMove *= instantiater.moveSpeed * Time.deltaTime;
+        transform.position = new Vector3(transform.position.x +xMove, transform.position.y, transform.position.z);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, rightLimit.position.x + transform.localScale.x / 2, leftLimit.position.x - transform.localScale.x / 2), transform.position.y, transform.position.z);
 
         if (TrialManager.instance.controllerTrigger>0.5f)//(touch.phase == TouchPhase.Ended)

@@ -36,12 +36,11 @@ public class RoomSetup : MonoBehaviour
     public bool Activate = false;
     private void Update()
     {
-       if(Activate && ParticipantId != null)
+       if(Activate)
         {
             Activate = false;
-            gameObject.SetActive(false);
             ActivateRoom(RoomToActivate);
-            dm.OnStartPressed(ParticipantId);
+            gameObject.SetActive(false);
         }
     }
 }

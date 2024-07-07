@@ -6,23 +6,34 @@ using UnityEngine.Video;
 
 public class TrialManager : MonoBehaviour
 {
-    public int holding {get; set; }//0 = none; 1 = controller; 2 = weight; 3 = book;
-
+    [Header("Trial Setup")]
+    public string ParticipantID;
+    public int activateRoom = 0;
+    public Vector3 feedbackDirection;
+    public bool StartTrial;
+    [Space]
+    [Space]
+    [Header("Accesorries")]
+    public float loadingTime;
+    public RoomSetup roomSetup;
     public VideoPlayer exercise_vp;
     public GameObject exercise_menu;
-    public VideoClip[] vcs;
-    public GameObject[] games;
-    public float loadingTime;
-    public static TrialManager instance;
     public GameObject vidButtonPrefab;
     public Transform vidButtonParent;
+    public static TrialManager instance;
+    public PlayRandFeedback[] Feedbacks; //check is positive
+    public VideoClip[] vcs;
+    public GameObject[] games;
+    [Header("Controller")]
     public Vector2 controllerPad;
     public float controllerTrigger;
+    public bool fakeInput;
+    public Vector2 fakeController;
+    public float fakeTrigger;
     // Update is called once per frame
     private void Awake()
     {
         instance = this;
-        loadingTime = 1.5f;
         vcs = Resources.LoadAll<VideoClip>("Exercise Videos");
         GameObject bt;
         int clip_i = 0;
@@ -38,10 +49,37 @@ public class TrialManager : MonoBehaviour
 
     private void Update()
     {
-        //FIXME
-        controllerTrigger = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
-        controllerPad = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
-        //Debug.Log(controllerTrigger.ToString() + controllerPad.ToString());
+        if (StartTrial) {
+            roomSetup.Activate = true;
+            for(int i = 0; i< 3; i++)
+            {
+                PlayRandFeedback prf = Feedbacks[i];
+                if (feedbackDirection[i] != 0)
+                {
+                    prf.positive = feedbackDirection[i] == 1;
+                    prf.negative = feedbackDirection[i] == -1;
+                    if (feedbackDirection[i] == 2)
+                    {
+
+                        prf.positive = true;
+                        prf.negative = true;
+                    }
+                }
+
+            }
+        }
+        
+        if (fakeInput)
+        {
+            controllerPad = fakeController;
+            controllerTrigger = fakeTrigger;
+        }
+        else
+        {
+            controllerTrigger = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
+            controllerPad = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
+            //Debug.Log(controllerTrigger.ToString() + controllerPad.ToString());
+        }
     }
     public void ExerciseButtonPressed(GameObject self)
     {
@@ -63,7 +101,6 @@ public class TrialManager : MonoBehaviour
     {
         StartCoroutine(SwitchGame(i));
         string msg = "Game" + i;
-        if (i == 0) msg = "Game Back";
         Debug.Log(msg);
         if (DataManager.instance != null)
         {
@@ -101,9 +138,10 @@ public class TrialManager : MonoBehaviour
             yield break;
         }
 
-        yield return new WaitForSeconds(loadingTime);
         exercise_menu.SetActive(false);
+        yield return new WaitForSeconds(loadingTime);
         exercise_vp.clip = vcs[i];
+        exercise_vp.transform.parent.gameObject.SetActive(true);
         exercise_vp.Play();
     }
     public IEnumerator SwitchGame(int gi)

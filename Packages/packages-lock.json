@@ -163,7 +163,7 @@
     },
     "com.unity.burst": {
       "version": "1.8.12",
-      "depth": 4,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.2.1",
@@ -238,7 +238,7 @@
     },
     "com.unity.mathematics": {
       "version": "1.2.6",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -284,6 +284,17 @@
         "com.unity.modules.terrain": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0",
         "com.unity.rendering.light-transport": "1.0.0"
+      }
+    },
+    "com.unity.render-pipelines.universal": {
+      "version": "16.0.5",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.1",
+        "com.unity.burst": "1.8.9",
+        "com.unity.render-pipelines.core": "16.0.5",
+        "com.unity.shadergraph": "16.0.5"
       }
     },
     "com.unity.rendering.light-transport": {
@@ -357,6 +368,15 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "com.unity.visualeffectgraph": {
+      "version": "16.0.5",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.shadergraph": "16.0.5",
+        "com.unity.render-pipelines.core": "16.0.5"
+      }
+    },
     "com.unity.visualscripting": {
       "version": "1.8.0",
       "depth": 0,
@@ -397,6 +417,23 @@
         "com.unity.xr.management": "4.4.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "jp.keijiro.lasp": {
+      "version": "2.1.6",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.burst": "1.4.4",
+        "jp.keijiro.libsoundio": "1.0.4"
+      },
+      "url": "https://registry.npmjs.com"
+    },
+    "jp.keijiro.libsoundio": {
+      "version": "1.0.4",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://registry.npmjs.com"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
