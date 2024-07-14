@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class TrialManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class TrialManager : MonoBehaviour
     public string ParticipantID;
     public int activateRoom = 0;
     public Vector3 feedbackDirection;
+    public bool leftHanded;
     public bool StartTrial;
     [Space]
     [Space]
@@ -24,12 +26,16 @@ public class TrialManager : MonoBehaviour
     public PlayRandFeedback[] Feedbacks; //check is positive
     public VideoClip[] vcs;
     public GameObject[] games;
+    public GameObject gameBackButton;
     [Header("Controller")]
     public Vector2 controllerPad;
     public float controllerTrigger;
+    public float controllerSqueeze;
     public bool fakeInput;
     public Vector2 fakeController;
     public float fakeTrigger;
+    public float fakeSqueeze;
+    public OVRInput.Controller controller;
     // Update is called once per frame
     private void Awake()
     {
@@ -45,6 +51,7 @@ public class TrialManager : MonoBehaviour
             clip_i++;
             bt.SetActive(true);
         }
+        controller = leftHanded ? OVRInput.Controller.LTouch : OVRInput.Controller.RTouch;
     }
 
     private void Update()
@@ -73,12 +80,13 @@ public class TrialManager : MonoBehaviour
         {
             controllerPad = fakeController;
             controllerTrigger = fakeTrigger;
+            controllerSqueeze = fakeSqueeze;
         }
         else
         {
-            controllerTrigger = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
-            controllerPad = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
-            //Debug.Log(controllerTrigger.ToString() + controllerPad.ToString());
+            controllerTrigger = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, controller);
+            controllerPad = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, controller);
+            controllerSqueeze = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, controller);
         }
     }
     public void ExerciseButtonPressed(GameObject self)
@@ -146,13 +154,14 @@ public class TrialManager : MonoBehaviour
     }
     public IEnumerator SwitchGame(int gi)
     {
-
+        gameBackButton.SetActive(false);
         foreach (GameObject game in games)
         {
             game.SetActive(false);
         }
         yield return new WaitForSeconds(loadingTime);
         games[gi].SetActive(true);
+        gameBackButton.SetActive(true);
 
     }
 
