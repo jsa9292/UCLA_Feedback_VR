@@ -2,7 +2,7 @@ using BeautifyEffect;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class AudioAmpToFloat : MonoBehaviour
 {
     public AudioSource audioSource;
@@ -13,12 +13,11 @@ public class AudioAmpToFloat : MonoBehaviour
 
     private float clipLoudness;
     private float[] clipSampleData;
-    public Beautify bf;
+    public Image overlay; 
     public float lightScale;
     // Start is called before the first frame update
     void Start()
     {
-        if(!bf) bf = Camera.main.GetComponent<Beautify>();
         if (!audioSource)
         {
             Debug.LogError(GetType() + ".Awake: there was no audioSource set.");
@@ -42,7 +41,7 @@ public class AudioAmpToFloat : MonoBehaviour
             }
             clipLoudness /= sampleDataLength; //clipLoudness is what you are looking for
         }
-        bf.tintColor = new Color(255,0,0, clipLoudness * lightScale);
+        overlay.color = new Color(255,0,0, clipLoudness * lightScale);
         if(!audioSource.isPlaying) gameObject.SetActive(false);
     }
 }
