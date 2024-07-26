@@ -72,9 +72,11 @@ public class TrialManager : MonoBehaviour
                         prf.negative = true;
                     }
                 }
+                if(!prf.initialized) prf.Init();
 
             }
         }
+        StartTrial = false;
         
         if (fakeInput)
         {

@@ -6,20 +6,31 @@ using UnityEngine;
 
 public class PlayRandFeedback : MonoBehaviour
 {
+    public bool initialized;
     public bool positive;
     public bool negative;
-    private GameObject[] pool;
+    public List<GameObject> pool;
     public GameObject[] positives;
     public GameObject[] negatives;
     // Start is called before the first frame update
-    void Start()
+    public void Init()
     {
-        pool = new GameObject[0];
-        if (positive) pool = pool.Concat(positives).ToArray();
-        if (negative) pool = pool.Concat(negatives).ToArray();
+        if (positive) {
+            foreach (GameObject f in positives)
+            {
+                pool.Add(f);
+            }
+        }
+        if (negative) {
+            foreach (GameObject f in negatives)
+            {
+                pool.Add(f);
+            }
+        }
+        initialized = true;
     }
     public void GetRandomFeedback() { 
-        int i = Random.Range(0, pool.Length);
+        int i = Random.Range(0, pool.Count);
         pool[i].SetActive(true);
     
     }
