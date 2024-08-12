@@ -793,9 +793,9 @@ Canvas:
   m_GameObject: {fileID: 57922440}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 780058397}
-  m_PlaneDistance: 1.84
+  m_PlaneDistance: 0.2
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -9212,6 +9212,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OVRT_BoundTrackedObject (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1797566019642362759, guid: e1ba45ed8594a2f429dc671cad131c92, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5353007411311027802, guid: e1ba45ed8594a2f429dc671cad131c92, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -9703,6 +9707,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OVRT_BoundTrackedObject
       objectReference: {fileID: 0}
+    - target: {fileID: 1797566019642362759, guid: e1ba45ed8594a2f429dc671cad131c92, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5353007411311027802, guid: e1ba45ed8594a2f429dc671cad131c92, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -9774,7 +9782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1797566019642362758, guid: e1ba45ed8594a2f429dc671cad131c92, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.062
+      value: -0.632
       objectReference: {fileID: 0}
     - target: {fileID: 1797566019642362758, guid: e1ba45ed8594a2f429dc671cad131c92, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14947,6 +14955,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1002890419}
     m_Modifications:
+    - target: {fileID: 1834044996988452524, guid: 3d0d9e644ff77e54b9cc68a923d874c3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207916766575745676, guid: 3d0d9e644ff77e54b9cc68a923d874c3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4947667098311753639, guid: 3d0d9e644ff77e54b9cc68a923d874c3, type: 3}
       propertyPath: m_Name
       value: ExerciseTV
@@ -15714,6 +15730,18 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1496873174}
+    - target: {fileID: 5039413521409619392, guid: b7746055670a45042b7a42247d8640bd, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039413521409619392, guid: b7746055670a45042b7a42247d8640bd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091193929335288378, guid: b7746055670a45042b7a42247d8640bd, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8983758910103595156, guid: b7746055670a45042b7a42247d8640bd, type: 3}
       propertyPath: overlay
       value: 
