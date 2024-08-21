@@ -2309,6 +2309,11 @@ Transform:
   - {fileID: 1577619865}
   m_Father: {fileID: 523909498}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &329806604 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5650233651433515980, guid: f54012181eacade4ea242c65f804720f, type: 3}
+  m_PrefabInstance: {fileID: 660443593}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330541098
 GameObject:
   m_ObjectHideFlags: 0
@@ -3704,6 +3709,7 @@ MonoBehaviour:
   feedbackDirection: {x: 1, y: -1, z: 1}
   leftHanded: 0
   StartTrial: 0
+  hasStarted: 0
   loadingTime: 4
   roomSetup: {fileID: 1982626965}
   exercise_vp: {fileID: 592535872}
@@ -3720,6 +3726,7 @@ MonoBehaviour:
   - {fileID: 1700937257}
   - {fileID: 7599206955924989998}
   gameBackButton: {fileID: 93094360}
+  environmentParent: {fileID: 0}
   controllerPad: {x: 0, y: 0}
   controllerTrigger: 0
   controllerSqueeze: 0
@@ -3728,6 +3735,9 @@ MonoBehaviour:
   fakeTrigger: 0
   fakeSqueeze: 0
   controller: 0
+  controllerL: {fileID: 542669937}
+  controllerR: {fileID: 329806604}
+  controllerT: {fileID: 0}
 --- !u!1 &519821119
 GameObject:
   m_ObjectHideFlags: 0
@@ -3896,6 +3906,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1669639035}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &542669937 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2791939883647740635, guid: f54012181eacade4ea242c65f804720f, type: 3}
+  m_PrefabInstance: {fileID: 660443593}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &545178846
 GameObject:
   m_ObjectHideFlags: 0
@@ -15730,6 +15745,18 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1496873174}
+    - target: {fileID: 6678521182433912176, guid: b7746055670a45042b7a42247d8640bd, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678521182433912176, guid: b7746055670a45042b7a42247d8640bd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678521182433912176, guid: b7746055670a45042b7a42247d8640bd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8983758910103595156, guid: b7746055670a45042b7a42247d8640bd, type: 3}
       propertyPath: overlay
       value: 
