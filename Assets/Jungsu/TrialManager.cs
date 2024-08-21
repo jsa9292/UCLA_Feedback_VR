@@ -13,6 +13,7 @@ public class TrialManager : MonoBehaviour
     public Vector3 feedbackDirection;
     public bool leftHanded;
     public bool StartTrial;
+    public bool hasStarted;
     [Space]
     [Space]
     [Header("Accesorries")]
@@ -27,6 +28,7 @@ public class TrialManager : MonoBehaviour
     public VideoClip[] vcs;
     public GameObject[] games;
     public GameObject gameBackButton;
+    public Transform environmentParent;
     [Header("Controller")]
     public Vector2 controllerPad;
     public float controllerTrigger;
@@ -36,6 +38,9 @@ public class TrialManager : MonoBehaviour
     public float fakeTrigger;
     public float fakeSqueeze;
     public OVRInput.Controller controller;
+    public Transform controllerL;
+    public Transform controllerR;
+    public Transform controllerT;
     // Update is called once per frame
     private void Awake()
     {
@@ -52,13 +57,30 @@ public class TrialManager : MonoBehaviour
             bt.SetActive(true);
         }
         controller = leftHanded ? OVRInput.Controller.LTouch : OVRInput.Controller.RTouch;
+        controllerT = leftHanded ? controllerL : controllerR;
     }
-
+    private Vector3 controllerPos;
+    private Vector3 controllerDir;
     private void Update()
     {
-        if (StartTrial) {
+
+        if (fakeInput)
+        {
+            controllerPad = fakeController;
+            controllerTrigger = fakeTrigger;
+            controllerSqueeze = fakeSqueeze;
+        }
+        else
+        {
+            controllerTrigger = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, controller);
+            controllerPad = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, controller);
+            controllerSqueeze = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, controller);
+        }
+
+        if (StartTrial)
+        {
             roomSetup.Activate = true;
-            for(int i = 0; i< 3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 PlayRandFeedback prf = Feedbacks[i];
                 if (feedbackDirection[i] != 0)
@@ -72,24 +94,25 @@ public class TrialManager : MonoBehaviour
                         prf.negative = true;
                     }
                 }
-                if(!prf.initialized) prf.Init();
+                if (!prf.initialized) prf.Init();
 
             }
+            hasStarted = true;
+
         }
         StartTrial = false;
+
+        if (hasStarted) {
+            if (controllerPad.y > 0) {
+                controllerPos = controllerT.position;
+            }
+            if (controllerPad.y < 0) {
+                controllerDir = controllerPos - controllerT.position;
+                environmentParent.LookAt(environmentParent.position + controllerDir);
+            }
+
+        }
         
-        if (fakeInput)
-        {
-            controllerPad = fakeController;
-            controllerTrigger = fakeTrigger;
-            controllerSqueeze = fakeSqueeze;
-        }
-        else
-        {
-            controllerTrigger = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, controller);
-            controllerPad = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, controller);
-            controllerSqueeze = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, controller);
-        }
     }
     public void ExerciseButtonPressed(GameObject self)
     {
