@@ -15670,14 +15670,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1002890419}
     m_Modifications:
-    - target: {fileID: 1233483091049975478, guid: b7746055670a45042b7a42247d8640bd, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1233483091049975478, guid: b7746055670a45042b7a42247d8640bd, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1301490517962760669, guid: b7746055670a45042b7a42247d8640bd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -15690,22 +15682,6 @@ PrefabInstance:
       propertyPath: overlay
       value: 
       objectReference: {fileID: 429993616}
-    - target: {fileID: 1632798214024916898, guid: b7746055670a45042b7a42247d8640bd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2462752435757669469, guid: b7746055670a45042b7a42247d8640bd, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2462752435757669469, guid: b7746055670a45042b7a42247d8640bd, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2462752435757669469, guid: b7746055670a45042b7a42247d8640bd, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4548547525237448423, guid: b7746055670a45042b7a42247d8640bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6977181
@@ -15754,22 +15730,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1496873174}
-    - target: {fileID: 5039413521409619392, guid: b7746055670a45042b7a42247d8640bd, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039413521409619392, guid: b7746055670a45042b7a42247d8640bd, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7091193929335288378, guid: b7746055670a45042b7a42247d8640bd, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7091193929335288378, guid: b7746055670a45042b7a42247d8640bd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8983758910103595156, guid: b7746055670a45042b7a42247d8640bd, type: 3}
       propertyPath: overlay
       value: 
