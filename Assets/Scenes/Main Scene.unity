@@ -5969,6 +5969,7 @@ Transform:
   - {fileID: 1357120409}
   - {fileID: 718436868}
   - {fileID: 708503256}
+  - {fileID: 1002890419}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &841540165
@@ -6610,7 +6611,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002890418}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.5667181, y: -0.31081295, z: -0.9138006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6622,7 +6623,7 @@ Transform:
   - {fileID: 1982626966}
   - {fileID: 981652997}
   - {fileID: 57922444}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 841540164}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1009909216
 GameObject:
@@ -15034,6 +15035,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 514869434}
+    - target: {fileID: 8071695078034018906, guid: 3d0d9e644ff77e54b9cc68a923d874c3, type: 3}
+      propertyPath: m_Size
+      value: 0.99999976
+      objectReference: {fileID: 0}
     - target: {fileID: 8996453427846987118, guid: 3d0d9e644ff77e54b9cc68a923d874c3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
@@ -16401,7 +16406,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 841540164}
-  - {fileID: 1002890419}
   - {fileID: 514869433}
   - {fileID: 680791355}
   - {fileID: 1582721788}
