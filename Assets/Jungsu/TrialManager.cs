@@ -102,7 +102,7 @@ public class TrialManager : MonoBehaviour
         }
         StartTrial = false;
 
-        if (hasStarted) {
+        if (!hasStarted) {
             if (controllerPad.y > 0) {
                 controllerPos = controllerT.position;
             }
