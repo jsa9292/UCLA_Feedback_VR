@@ -59,8 +59,8 @@ public class TrialManager : MonoBehaviour
         controller = leftHanded ? OVRInput.Controller.LTouch : OVRInput.Controller.RTouch;
         controllerT = leftHanded ? controllerL : controllerR;
     }
-    private Vector3 controllerPos;
-    private Vector3 controllerDir;
+    public Vector3 controllerPos;
+    public Vector3 controllerDir;
     private void Update()
     {
 
@@ -104,11 +104,13 @@ public class TrialManager : MonoBehaviour
 
         if (!hasStarted) {
             if (controllerPad.y > 0) {
+                Debug.Log("remember");
                 controllerPos = controllerT.position;
             }
             if (controllerPad.y < 0) {
+                Debug.Log("rotate");
                 controllerDir = controllerPos - controllerT.position;
-                environmentParent.LookAt(environmentParent.position + controllerDir);
+                environmentParent.LookAt(environmentParent.position + Vector3.forward*controllerDir.x + Vector3.right*controllerDir.z);
             }
 
         }
