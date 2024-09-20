@@ -79,7 +79,7 @@ public class TrialManager : MonoBehaviour
 
         if (StartTrial)
         {
-            roomSetup.Activate = true;
+            roomSetup.ActivateRoom(activateRoom);
             for (int i = 0; i < 3; i++)
             {
                 PlayRandFeedback prf = Feedbacks[i];

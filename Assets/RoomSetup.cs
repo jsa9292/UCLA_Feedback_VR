@@ -8,11 +8,6 @@ public class RoomSetup : MonoBehaviour
     public GameObject[] rooms;
     public Vector3 roomPos = Vector3.zero;
     // Start is called before the first frame update
-    void Start()
-    {
-        CalculateRoomPos();
-    }
-
     void CalculateRoomPos() {
         roomPos = Vector3.zero;
         foreach (MovingWall wall in mws) {
@@ -26,21 +21,13 @@ public class RoomSetup : MonoBehaviour
         foreach (GameObject room in rooms) {
             room.SetActive(false);
         }
-        if (i < 0) return;
+        if (i < 0)
+        {
+            gameObject.SetActive(true);
+            return;
+        }
         rooms[i].SetActive(true);
         rooms[i].transform.position = roomPos;
-    }
-    public DataManager dm;
-    public string ParticipantId;
-    public int RoomToActivate = 0;
-    public bool Activate = false;
-    private void Update()
-    {
-       if(Activate)
-        {
-            Activate = false;
-            ActivateRoom(RoomToActivate);
-            gameObject.SetActive(false);
-        }
+        gameObject.SetActive(false);
     }
 }
