@@ -16,6 +16,7 @@ public class RoomSetup : MonoBehaviour
         roomPos /= 2f;
         roomPos.y = 0f;
     }
+    public bool moveRoom;
     public void ActivateRoom(int i) {
         CalculateRoomPos();
         foreach (GameObject room in rooms) {
@@ -27,7 +28,7 @@ public class RoomSetup : MonoBehaviour
             return;
         }
         rooms[i].SetActive(true);
-        rooms[i].transform.position = roomPos;
+        if(moveRoom) rooms[i].transform.position = roomPos;
         gameObject.SetActive(false);
     }
 }

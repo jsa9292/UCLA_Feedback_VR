@@ -29,6 +29,7 @@ public class GameMenuNav : MonoBehaviour
             cooldown -= Time.deltaTime; 
             return; 
         }
+        if (!TrialManager.instance.calibrated) return;
         thumb = TrialManager.instance.controllerPad.x;
         trig = TrialManager.instance.controllerTrigger;
         hand = TrialManager.instance.controllerSqueeze;

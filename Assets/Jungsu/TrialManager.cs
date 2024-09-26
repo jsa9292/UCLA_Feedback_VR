@@ -13,7 +13,7 @@ public class TrialManager : MonoBehaviour
     public Vector3 feedbackDirection;
     public bool leftHanded;
     public bool StartTrial;
-    public bool hasStarted;
+    public bool calibrated;
     [Space]
     [Space]
     [Header("Accesorries")]
@@ -61,6 +61,7 @@ public class TrialManager : MonoBehaviour
     }
     public Vector3 controllerPos;
     public Vector3 controllerDir;
+    public bool canMoveWalls;
     private void Update()
     {
 
@@ -97,22 +98,22 @@ public class TrialManager : MonoBehaviour
                 if (!prf.initialized) prf.Init();
 
             }
-            hasStarted = true;
+            calibrated = true;
 
         }
         StartTrial = false;
 
-        if (!hasStarted) {
-            if (controllerPad.y > 0) {
+        if (!calibrated) {
+            if (controllerPad.y < -0.3f) {
                 Debug.Log("remember");
                 controllerPos = controllerT.position;
+                environmentParent.position = new Vector3(controllerPos.x,0, controllerPos.z);
             }
-            if (controllerPad.y < 0) {
+            if (controllerPad.y > 0.3f) {
                 Debug.Log("rotate");
-                controllerDir = controllerPos - controllerT.position;
-                environmentParent.LookAt(environmentParent.position + Vector3.forward*controllerDir.x + Vector3.right*controllerDir.z);
+                controllerDir = controllerT.position;
+                environmentParent.LookAt(new Vector3(controllerDir.x, 0, controllerDir.z));
             }
-
         }
         
     }

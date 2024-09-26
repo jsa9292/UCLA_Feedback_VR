@@ -12,12 +12,15 @@ public class MovingWall : MonoBehaviour
     // Start is called before the first frame update
     public void MoveWall()
     {
-        worldDir = transform.TransformDirection(dir.x, dir.y, dir.z);
-        transform.position += worldDir * speed * Time.deltaTime;
-        pair.position += worldDir * speed * Time.deltaTime;
-        foreach (Transform t in onWall)
+        if (TrialManager.instance.canMoveWalls)
         {
-            t.position += worldDir * speed * Time.deltaTime;
+            worldDir = transform.TransformDirection(dir.x, dir.y, dir.z);
+            transform.position += worldDir * speed * Time.deltaTime;
+            //pair.position += worldDir * speed * Time.deltaTime;
+            foreach (Transform t in onWall)
+            {
+                t.position += worldDir * speed * Time.deltaTime;
+            }
         }
     }
 }
