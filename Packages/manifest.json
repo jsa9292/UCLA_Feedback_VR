@@ -1,12 +1,15 @@
 {
   "scopedRegistries": [
-  {
-    "name": "Keijiro",
-    "url": "https://registry.npmjs.com",
-    "scopes": [ "jp.keijiro" ]
-  }
+    {
+      "name": "Keijiro",
+      "url": "https://registry.npmjs.com",
+      "scopes": [
+        "jp.keijiro"
+      ]
+    }
   ],
   "dependencies": {
+    "com.htc.upm.vive.openxr": "https://github.com/ViveSoftware/VIVE-OpenXR-PC.git?path=com.htc.upm.vive.openxr",
     "com.meta.xr.sdk.all": "63.0.0",
     "com.meta.xr.sdk.interaction.ovr.samples": "63.0.0",
     "com.unity.2d.sprite": "1.0.0",
@@ -22,6 +25,8 @@
     "com.unity.visualeffectgraph": "16.0.5",
     "com.unity.visualscripting": "1.8.0",
     "com.unity.xr.oculus": "4.1.2",
+    "com.valvesoftware.unity.openvr": "file:../unity-xr-plugin-master/com.valve.openvr",
+    "jp.keijiro.lasp": "2.1.6",
     "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
@@ -53,7 +58,6 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "jp.keijiro.lasp": "2.1.6"
+    "com.unity.modules.xr": "1.0.0"
   }
 }
