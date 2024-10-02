@@ -225,6 +225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aud: {fileID: 157825211032907529}
+  waitTime: 2
+  playTime: 0
 --- !u!1 &734171611784621617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,6 +1340,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aud: {fileID: 3983007426737191237}
+  waitTime: 2
+  playTime: 0
 --- !u!1 &1909200586064918375
 GameObject:
   m_ObjectHideFlags: 0
@@ -2228,6 +2232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aud: {fileID: 3801295222657857830}
+  waitTime: 2
+  playTime: 0
 --- !u!1 &2954709762560432419
 GameObject:
   m_ObjectHideFlags: 0
@@ -4677,6 +4683,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aud: {fileID: 3716050578602127679}
+  waitTime: 2
+  playTime: 0
 --- !u!1 &5920094103119379002
 GameObject:
   m_ObjectHideFlags: 0
@@ -6216,6 +6224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aud: {fileID: 7542862391146266818}
+  waitTime: 2
+  playTime: 0
 --- !u!1 &8005886499958270870
 GameObject:
   m_ObjectHideFlags: 0

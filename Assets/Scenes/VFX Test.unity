@@ -284,7 +284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &765055970
 AudioListener:
   m_ObjectHideFlags: 0
@@ -500,6 +500,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aud: {fileID: 939767813}
+  waitTime: 2
+  playTime: 0
 --- !u!82 &939767813
 AudioSource:
   m_ObjectHideFlags: 0
@@ -872,6 +874,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aud: {fileID: 1084863617}
+  waitTime: 2
+  playTime: 0
 --- !u!82 &1084863617
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1240,6 +1244,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aud: {fileID: 1554546532}
+  waitTime: 2
+  playTime: 0
 --- !u!82 &1554546532
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1465,6 +1471,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aud: {fileID: 1608881040}
+  waitTime: 2
+  playTime: 0
 --- !u!82 &1608881040
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1690,6 +1698,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aud: {fileID: 1762000752}
+  waitTime: 2
+  playTime: 0
 --- !u!82 &1762000752
 AudioSource:
   m_ObjectHideFlags: 0

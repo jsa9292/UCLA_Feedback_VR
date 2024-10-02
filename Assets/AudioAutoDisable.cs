@@ -5,15 +5,19 @@ using UnityEngine;
 public class AudioAutoDisable : MonoBehaviour
 {
     public AudioSource aud;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public float waitTime;
+    public float playTime;
     // Update is called once per frame
     void Update()
     {
-        if(!aud.isPlaying)gameObject.SetActive(false);
+        if (!aud.isPlaying)
+        {
+            playTime += Time.deltaTime;
+        }
+        if (playTime > waitTime)
+        {
+            playTime = 0;
+            gameObject.SetActive(false);
+        }
     }
 }
