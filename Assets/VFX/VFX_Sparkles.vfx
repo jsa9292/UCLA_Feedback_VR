@@ -2665,7 +2665,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.TArcTorus, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"torus":{"transform":{"position":{"x":0.0,"y":0.0,"z":0.0},"angles":{"x":-90.0,"y":-90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":4.0}},"majorRadius":0.5799999833106995,"minorRadius":0.10000000149011612},"arc":3.140000104904175}'
+      m_SerializableObject: '{"torus":{"transform":{"position":{"x":0.0,"y":0.0,"z":0.0},"angles":{"x":-90.0,"y":-90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":4.0}},"majorRadius":0.30000001192092898,"minorRadius":0.10000000149011612},"arc":3.140000104904175}'
     m_Space: 0
   m_Property:
     name: arcTorus

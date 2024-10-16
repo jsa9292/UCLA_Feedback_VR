@@ -174,8 +174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 0
-  leftLimit: -0.437
-  rightLimit: 0.502
+  leftLimit: -0.505
+  rightLimit: 0.4740001
 --- !u!96 &5548597910144179968
 TrailRenderer:
   serializedVersion: 3
