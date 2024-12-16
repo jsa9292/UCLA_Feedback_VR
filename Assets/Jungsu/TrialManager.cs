@@ -132,6 +132,10 @@ public class TrialManager : MonoBehaviour
         else {
             Debug.LogError("No DataManager Instance");
         }
+        if (i != -1) {
+
+            exercise_menu.SetActive(false);
+        }
     }
     public void GameButtonPressed(int i)
     {
@@ -174,7 +178,6 @@ public class TrialManager : MonoBehaviour
             yield break;
         }
 
-        exercise_menu.SetActive(false);
         yield return new WaitForSeconds(loadingTime);
         exercise_vp.clip = vcs[i];
         exercise_vp.transform.parent.gameObject.SetActive(true);
