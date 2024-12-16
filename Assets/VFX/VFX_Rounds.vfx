@@ -349,7 +349,7 @@ MonoBehaviour:
   blendMode: 0
   cullMode: 0
   zWriteMode: 0
-  zTestMode: 0
+  zTestMode: 7
   useAlphaClipping: 1
   generateMotionVector: 0
   excludeFromTUAndAA: 0
@@ -3280,7 +3280,7 @@ MonoBehaviour:
   blendMode: 1
   cullMode: 0
   zWriteMode: 0
-  zTestMode: 0
+  zTestMode: 7
   useAlphaClipping: 0
   generateMotionVector: 0
   excludeFromTUAndAA: 0
