@@ -89,7 +89,7 @@ public class Ball : MonoBehaviour
         }
         if (ballToInstantiate != null)
         {
-            GameObject ball = Instantiate(ballToInstantiate, this.transform.position, this.transform.rotation) as GameObject;
+            GameObject ball = Instantiate(ballToInstantiate, this.transform.position, this.transform.rotation, GM.ballParent) as GameObject;
             /*if(GM.shrinkBallSizes > 1)
                 ball.transform.localScale /= GM.shrinkBallSizes;
             else if (GM.shrinkBallSizes < 0)

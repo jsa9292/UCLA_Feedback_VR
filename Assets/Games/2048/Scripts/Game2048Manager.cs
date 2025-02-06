@@ -14,6 +14,7 @@ public class Game2048Manager : MonoBehaviour
     private float remainingForNextLevel = 25;
     public int howmany2048;
     static public Game2048Manager instance;
+    public Transform ballParent;
     public int get2048   // property
     {
         get { return howmany2048; }
@@ -129,6 +130,9 @@ public class Game2048Manager : MonoBehaviour
         }
         Time.timeScale = 0f;
     }
-    
+    private void OnApplicationQuit()
+    {
+        GameOver();
+    }
 }
 

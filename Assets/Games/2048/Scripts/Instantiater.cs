@@ -15,7 +15,6 @@ public class Instantiater : MonoBehaviour
     public float moveSpeed = 1f;
     public Transform leftLimit;
     public Transform rightLimit;
-    public Transform ballParent;
 
     private void Start()
     {
@@ -62,7 +61,7 @@ public class Instantiater : MonoBehaviour
             index = 3;
         }
 
-        GameObject ball = Instantiate(GM.balls[index],ballParent) as GameObject;
+        GameObject ball = Instantiate(GM.balls[index],GM.ballParent) as GameObject;
         /*if (GM.shrinkBallSizes > 1)
             ball.transform.localScale /= GM.shrinkBallSizes;
         else if (GM.shrinkBallSizes < 0)

@@ -43,8 +43,8 @@ public class instantiaterChild : MonoBehaviour
 
         //}
         float xMove = 0;
-        xMove += TrialManager.instance.controllerPad.x > 0.3f ? -1 : 0;
-        xMove += TrialManager.instance.controllerPad.x < -0.3f ? 1 : 0;
+        xMove += TrialManager.instance.controllerPad.x > 0.1f ? -1 : 0;
+        xMove += TrialManager.instance.controllerPad.x < -0.1f ? 1 : 0;
         xMove *= instantiater.moveSpeed * Time.deltaTime;
         transform.position = new Vector3(transform.position.x +xMove, transform.position.y, transform.position.z);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, rightLimit.position.x + transform.localScale.x / 2, leftLimit.position.x - transform.localScale.x / 2), transform.position.y, transform.position.z);
