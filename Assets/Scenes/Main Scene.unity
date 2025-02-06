@@ -86481,6 +86481,10 @@ PrefabInstance:
       propertyPath: binding
       value: TrackerRole_Chest
       objectReference: {fileID: 0}
+    - target: {fileID: 1797566019642362757, guid: e1ba45ed8594a2f429dc671cad131c92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1797566019642362758, guid: e1ba45ed8594a2f429dc671cad131c92, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
