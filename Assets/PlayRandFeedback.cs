@@ -12,9 +12,11 @@ public class PlayRandFeedback : MonoBehaviour
     public List<GameObject> pool;
     public GameObject[] positives;
     public GameObject[] negatives;
+    public TrialManager tm;
     // Start is called before the first frame update
     public void Init()
     {
+        tm = TrialManager.instance;
         if (positive) {
             foreach (GameObject f in positives)
             {
@@ -32,6 +34,7 @@ public class PlayRandFeedback : MonoBehaviour
     public void GetRandomFeedback() { 
         int i = Random.Range(0, pool.Count);
         pool[i].SetActive(true);
+        tm.RecordMsg(pool[i].name);
     
     }
 }

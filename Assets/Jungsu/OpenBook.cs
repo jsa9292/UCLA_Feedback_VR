@@ -44,7 +44,7 @@ public class OpenBook : MonoBehaviour
     }
     public void ChangeFolderName(TMP_Text tmp) {
         folderName = tmp.text;
-        string msg = folderName;
+        string msg = "ebook " + folderName;
         Debug.Log(msg);
         try
         {

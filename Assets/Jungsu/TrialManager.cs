@@ -195,5 +195,9 @@ public class TrialManager : MonoBehaviour
         gameBackButton.SetActive(true);
 
     }
+    public void RecordMsg(string msg)
+    {
+        DataManager.instance.WriteToSave(msg);
+    }
 
 }
