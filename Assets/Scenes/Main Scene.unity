@@ -135349,7 +135349,6 @@ MonoBehaviour:
   pool: []
   positives:
   - {fileID: 6129679718983795481}
-  - {fileID: 4941283848577769506}
   - {fileID: 6087912370785935619}
   - {fileID: 9035072345977914798}
   - {fileID: 1468609104631642410}
@@ -156196,7 +156195,7 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
-  m_RenderingLayerMask: 2
+  m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -156217,7 +156216,7 @@ VFXRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 199
+  m_SortingOrder: 0
 --- !u!1 &5196663927691591606
 GameObject:
   m_ObjectHideFlags: 0
@@ -156844,7 +156843,6 @@ MonoBehaviour:
   pool: []
   positives:
   - {fileID: 4452003252759057254}
-  - {fileID: 2726051409994579805}
   - {fileID: 8256036124604419011}
   - {fileID: 5886971121870927698}
   - {fileID: 1503528510997299302}
@@ -171769,7 +171767,6 @@ MonoBehaviour:
   pool: []
   positives:
   - {fileID: 7923046120006059367}
-  - {fileID: 1889198185410373260}
   - {fileID: 6707005503945746927}
   - {fileID: 1631725318218502859}
   - {fileID: 8723076753280623128}
