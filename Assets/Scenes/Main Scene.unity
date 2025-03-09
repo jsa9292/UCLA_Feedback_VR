@@ -38655,7 +38655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2083563559982072072, guid: f54012181eacade4ea242c65f804720f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2478579677981785246, guid: f54012181eacade4ea242c65f804720f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -38783,7 +38783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4126979563058569611, guid: f54012181eacade4ea242c65f804720f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4400296377011707755, guid: f54012181eacade4ea242c65f804720f, type: 3}
       propertyPath: m_IsActive
@@ -38835,11 +38835,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6996277670399095259, guid: f54012181eacade4ea242c65f804720f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6996277670552144107, guid: f54012181eacade4ea242c65f804720f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7022967737334233131, guid: f54012181eacade4ea242c65f804720f, type: 3}
       propertyPath: m_IsActive
@@ -90595,6 +90595,7 @@ MonoBehaviour:
   negatives:
   - {fileID: 893460819}
   - {fileID: 315171586}
+  tm: {fileID: 0}
 --- !u!1 &1543021950
 GameObject:
   m_ObjectHideFlags: 0
@@ -135354,6 +135355,7 @@ MonoBehaviour:
   - {fileID: 1468609104631642410}
   negatives:
   - {fileID: 4147221600541985127}
+  tm: {fileID: 0}
 --- !u!114 &2409136957476411252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156848,6 +156850,7 @@ MonoBehaviour:
   - {fileID: 1503528510997299302}
   negatives:
   - {fileID: 6009652728841896522}
+  tm: {fileID: 0}
 --- !u!4 &5691457551231512723
 Transform:
   m_ObjectHideFlags: 0
@@ -171772,6 +171775,7 @@ MonoBehaviour:
   - {fileID: 8723076753280623128}
   negatives:
   - {fileID: 8924464666860933136}
+  tm: {fileID: 0}
 --- !u!114 &8624220505753354464
 MonoBehaviour:
   m_ObjectHideFlags: 0
