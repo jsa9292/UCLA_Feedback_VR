@@ -14,6 +14,7 @@ public class TrialManager : MonoBehaviour
     public bool leftHanded;
     public bool StartTrial;
     public bool calibrated;
+    public AutoRecalibrator autoRecalibrator;
     [Space]
     [Space]
     [Header("Accesorries")]
@@ -99,6 +100,7 @@ public class TrialManager : MonoBehaviour
 
             }
             calibrated = true;
+            autoRecalibrator.enabled = true;
 
         }
         StartTrial = false;

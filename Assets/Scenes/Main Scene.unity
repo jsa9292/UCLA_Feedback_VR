@@ -30568,6 +30568,7 @@ MonoBehaviour:
   leftHanded: 0
   StartTrial: 0
   calibrated: 0
+  autoRecalibrator: {fileID: 1553226096}
   loadingTime: 4
   roomSetup: {fileID: 1982626965}
   exercise_vp: {fileID: 6891518590486957237}
@@ -38725,6 +38726,10 @@ PrefabInstance:
       propertyPath: SimultaneousHandsAndControllersEnabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2483171112407822886, guid: f54012181eacade4ea242c65f804720f, type: 3}
+      propertyPath: launchSimultaneousHandsControllersOnStartup
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2483171112643467137, guid: f54012181eacade4ea242c65f804720f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -38784,6 +38789,10 @@ PrefabInstance:
     - target: {fileID: 2799484147959018067, guid: f54012181eacade4ea242c65f804720f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3079314865690865216, guid: f54012181eacade4ea242c65f804720f, type: 3}
+      propertyPath: m_showState
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3324988993660697638, guid: f54012181eacade4ea242c65f804720f, type: 3}
       propertyPath: m_IsActive
@@ -38891,6 +38900,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7215171682644439250, guid: f54012181eacade4ea242c65f804720f, type: 3}
       propertyPath: _enablePhysicsCapsules
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239993999913118407, guid: f54012181eacade4ea242c65f804720f, type: 3}
+      propertyPath: m_showState
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7476962600139100711, guid: f54012181eacade4ea242c65f804720f, type: 3}
@@ -91348,6 +91361,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1553184427}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1553226095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1553226097}
+  - component: {fileID: 1553226096}
+  m_Layer: 0
+  m_Name: Autocalibrator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1553226096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553226095}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158483c79cb21a043a7024fafaf25601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftController: {fileID: 1031213357}
+  worldAnchorRoot: {fileID: 841540164}
+  initialize: 1
+--- !u!4 &1553226097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553226095}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7148727, y: 1.0763927, z: -0.48214597}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1554620013
 GameObject:
   m_ObjectHideFlags: 0
@@ -173499,6 +173559,7 @@ SceneRoots:
   - {fileID: 7845073750376341574}
   - {fileID: 841540164}
   - {fileID: 514869433}
+  - {fileID: 1553226097}
   - {fileID: 680791355}
   - {fileID: 722726054}
   - {fileID: 3338394686606213420}
