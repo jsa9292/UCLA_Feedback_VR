@@ -27,7 +27,7 @@ public class DataManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update2() // changing it away from Update to stop calling it per frame
     {
         try
         {
